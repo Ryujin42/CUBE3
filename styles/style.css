@@ -97,3 +97,18 @@ footer {
     display: flex;
     flex-direction: row-reverse;
 }
+
+
+
+.forgetmdpinput{
+    text-align: right;
+    width: 300px;
+    height: 25px;
+    margin: 10px;
+}
+
+.forgetmdpbutton{
+    width: 200px;
+    height: 35px;
+    padding: 5px;
+}
