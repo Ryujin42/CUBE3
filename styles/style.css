@@ -112,3 +112,16 @@ footer {
     height: 35px;
     padding: 5px;
 }
+
+.signupinput{
+    text-align: right;
+    width: 300px;
+    height: 25px;
+    margin: 10px;
+}
+
+.signupbutton{
+    width: 200px;
+    height: 35px;
+    padding: 5px;
+}
