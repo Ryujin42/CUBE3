@@ -23,7 +23,7 @@
             <li><a href="#">S'inscrire</a></li>
         </ul>
     </nav>
-    <form class="" action="getinfo.php" method="post">
+    <form class="" action="infoachatbdd.php" method="post">
         <div>
             Information Personnel
         </div>
@@ -48,8 +48,23 @@
         </div>
         <div>
             <ul>
-                <li><input class="" type="text"  name="birthdate" placeholder="XX/XX/XXXX"></li>
-                <li><input class="" type="text"  name="country" placeholder="Pays"></li>
+                <li><input class="" type="number"  name="birthdate" placeholder="XX/XX/XXXX"></li>
+                <li><select  name="country" placeholder="Pays">
+                    <Option>
+                        <?php
+                        $bdd = new PDO('mysql:host=localhost;dbname=cour','root','');        
+                        } catch (PDOException $e) {
+                        echo 'Échec lors de la connexion : ' . $e->getMessage();
+                        
+                        $reponse = $bdd->query([SELECT]);
+                        while ($donnees = $reponse->fetch())
+                        {
+                            echo '<option>' .$donnees[] '</option>'
+                        }
+                        
+                        ?>
+                    </option>
+                </select></li>
             </ul>
         </div>
         <div>    
@@ -71,7 +86,7 @@
         <div>
             <ul>
                 <li><input class="" type="text"  name="adresse2" placeholder="Adresse"></li>
-                <li><input class="" type="text"  name="phone" placeholder="Téléphone"></li>
+                <li><input class="" type="number"  name="phone" placeholder="Téléphone"></li>
             </ul>
         </div>
         <div>

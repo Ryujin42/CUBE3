@@ -23,7 +23,7 @@
             <li><a href="#">S'inscrire</a></li>
         </ul>
     </nav>
-    <form class="" action="<payementbankinfo>.php" method="post">
+    <form class="" action="payementbankinfo.php" method="post">
         <div>
             Information Banquaire
         </div>
@@ -44,8 +44,8 @@
             <li>Date de péremption</li>
         </ul>
         <ul>
-            <li><input class="" type="text"  name="carteid" placeholder="XXXX-XXXX-XXXX-XXXX"></li>
-            <li><input class="" type="text"  name="dateperm" placeholder="XX/XX"></li>
+            <li><input class="" type="Number"  name="carteid" placeholder="XXXX-XXXX-XXXX-XXXX"></li>
+            <li><input class="" type="Number"  name="dateperm" placeholder="XX/XX"></li>
         </ul>
         <ul>
             <li>Nom du propiétaire</li>
@@ -53,7 +53,7 @@
         </ul>
         <ul>
             <li><input class="" type="text"  name="name" placeholder="Nom du propiétaire"></li>
-            <li><input class="" type="text"  name="cryptogramme" placeholder="XXX"></li>
+            <li><input class="" type="Number"  name="cryptogramme" placeholder="XXX"></li>
         </ul>
         <div>
             <button class="" type="submit">
