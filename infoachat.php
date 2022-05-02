@@ -56,10 +56,10 @@
                         } catch (PDOException $e) {
                         echo 'Échec lors de la connexion : ' . $e->getMessage();
                         
-                        $reponse = $bdd->query([SELECT]);
+                        $reponse = $bdd->query(/*[SELECT]*/);
                         while ($donnees = $reponse->fetch())
                         {
-                            echo '<option>' .$donnees[] '</option>'
+                            echo '<option>' .$donnees[/* */] '</option>'
                         }
                         
                         ?>
