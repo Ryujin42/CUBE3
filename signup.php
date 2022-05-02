@@ -1,4 +1,5 @@
 <?php
+function usercreate(){
 if($_POST['identifiant'] !== '' && $_POST['mdp1'] !== '' && $_POST['mdp2'] !== '' && $_POST['email'] !== '')
 {
     $mdp1 = $_POST['mdp1'];
@@ -17,14 +18,13 @@ if($_POST['identifiant'] !== '' && $_POST['mdp1'] !== '' && $_POST['mdp2'] !== '
                 } catch (PDOException $e) {
                     echo 'Échec lors de la connexion : ' . $e->getMessage();
                 }
-            $check = $bdd->prepare(/*"SELECT * FROM users WHERE Email = '$email'"*/);
+            $check = $bdd->prepare("SELECT * FROM Utilisateur WHERE mail = '$email'");
             $check-> execute();
             $row = $data->rowcount();
             if($row == 0)
             {
-                $insert = /*"INSERT INTO users(PSEUDO , Email , MDP) VALUES('$pseudo','$email','$mdp1')"*/;
+                $insert = "INSERT INTO Utilisateur(pseudo , mail , mdp, phone) VALUES('$identifiant','$mail','$mdp1','$phone')";
                 $bdd->prepare($insert)->execute();
-                Echo 'Email dispo';
                 header("Location: accueil.html");
             }
             else 
@@ -38,5 +38,6 @@ if($_POST['identifiant'] !== '' && $_POST['mdp1'] !== '' && $_POST['mdp2'] !== '
         
     }
 }
-
+}
+usercreate();
 ?>

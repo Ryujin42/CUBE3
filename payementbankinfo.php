@@ -16,7 +16,7 @@ if($_POST['carteid'] !== '' && $_POST['dateperm'] !== '' && $_POST['name'] !== '
                 } catch (PDOException $e) {
                     echo 'Échec lors de la connexion : ' . $e->getMessage();
                 }
-            $insert = /*[FAIRE L INSERT]*/;
+            $insert = "INSERT INTO Carte([numero],[date_carte],[cryptogramme])VALUES('$carteid','$dateperm','$name','$cryptogramme')";
             $bdd->prepare($insert)->execute();
             Echo 'Carte Valide';
             else 

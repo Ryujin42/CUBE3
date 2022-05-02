@@ -1,28 +1,21 @@
 <?php
-try {
-    $bdd = new PDO('mysql:host=localhost;dbname=cour','root','');        
-    } catch (PDOException $e) {
-        echo 'Échec lors de la connexion : ' . $e->getMessage();
-    }
-
-if (isset($_POST['identifant'])){
+  function checkAutent(){
+    if ($_POST['identifant'] !== '' && $_POST['password'] !== ''){
   
-  $identifant = stripslashes($_REQUEST['identifant']);
-  $identifant = mysqli_real_escape_string($conn, $identifant);
-  $mdp = stripslashes($_REQUEST['mdp']);
-  $mdp = mysqli_real_escape_string($conn, $mdp);
-  $query = /*"SELECT * FROM users WHERE username='$username' and password='".hash('sha256', $password)."'"*/;
-  $result = mysqli_query($conn,$query) or die(mysql_error());
-  $rows = mysqli_num_rows($result);
-  if($rows==1){
-      $_SESSION['identifant'] = $identifant;
-      header("Location: accueil.html");
-  }else{
-    $message = "Le nom d'utilisateur ou le mot de passe est incorrect.";
-  }
-}
+      $identifant = $_POST['identifant'];
+      $password = $_POST['password'];
+  
+      $bdd = new PDO('mysql:host=localhost;dbname=cour','root','');        
+      $query = "SELECT * FROM Utilisateur WHERE pseudo='$identifiant' and password='$password'";
+      $result = $bdd->prepare($sql);
+      $query->execute();
+      $result=$query->fetch(PDO::FETCH_ASSOC);
+      if($result){
+        header('Location: ./accueil.html');
+      }
+      else {
+        header('Location: ../connexion.php?error=ids');
+      }
+    }
+checkAutent();
 ?>
-
-<?php if (! empty($message)) { ?>
-    <p class="errorMessage"><?php echo $message; ?></p>
-<?php } ?>
