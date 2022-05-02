@@ -1,7 +1,7 @@
 <?php
 if($_POST['code'] !== '' && $_POST['ville'] !== '' && $_POST['name'] !== '' && $_POST['firstname'] !== '' && $_POST['birthdate'] !== '' && $_POST['country'] !== '' && $_POST['adresse1'] !== '')
 {
-    {
+    
         $code = $_POST['code'];
         $ville = $_POST['ville'];
         $name = $_POST['name'];
@@ -21,11 +21,9 @@ if($_POST['code'] !== '' && $_POST['ville'] !== '' && $_POST['name'] !== '' && $
     $bdd->prepare($insert)->execute();
     header("Location: payement.html");
     
-    else {
+    }else {
     Echo 'Champ Vide';
-        }
-        
     }
-}
-
+        
+    
 ?>

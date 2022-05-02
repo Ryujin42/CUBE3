@@ -8,36 +8,30 @@ if($_POST['identifiant'] !== '' && $_POST['mdp1'] !== '' && $_POST['mdp2'] !== '
     $email = $_POST['email'];
     $phone = $_POST['phone'];
 
-    if($mdp1 != $mdp2){
-        Echo 'Mdp incorrect';
+    $bdd = new PDO('mysql:host=localhost;dbname=cour','root','');        
+    
+    $checkEmailRequest = "SELECT * FROM `Utilisateur` WHERE identifiant = '$identifiant'";
+      
+    $checkEmailQuery = $bdd->prepare($checkEmailRequest);
+    
+    $checkEmailQuery->execute();
+    
+    $result=$checkEmailQuery->fetch(PDO::FETCH_ASSOC);
+    
+    if($result){
+      ;
+    }else{
+    
+      $sql = "INSERT INTO `Utilisateur` (pseudo, pwd, mail, Telephone) VALUES ('$identifiant', '$mdp1', '$email', '$phone')";
+      $query = $bdd->prepare($sql);
+      $result = $query->execute();
+      if($result){
+        header('Location: ./accueil.html');
+      }else{
+        ;
+      }
     }
-    else{
-        if (filter_var($email, FILTER_VALIDATE_EMAIL)) {
-            try {
-                $bdd = new PDO('mysql:host=localhost;dbname=cour','root','');        
-                } catch (PDOException $e) {
-                    echo 'Échec lors de la connexion : ' . $e->getMessage();
-                }
-            $check = $bdd->prepare("SELECT * FROM Utilisateur WHERE mail = '$email'");
-            $check-> execute();
-            $row = $data->rowcount();
-            if($row == 0)
-            {
-                $insert = "INSERT INTO Utilisateur(pseudo , mail , mdp, phone) VALUES('$identifiant','$mail','$mdp1','$phone')";
-                $bdd->prepare($insert)->execute();
-                header("Location: accueil.html");
-            }
-            else 
-            {
-                Echo 'Email deja use';
-            }
-            }
-        else {
-            Echo 'Email Non valide';
-        }
-        
-    }
+  }else{
+    ;
+  }
 }
-}
-usercreate();
-?>

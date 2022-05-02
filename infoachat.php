@@ -37,7 +37,7 @@
         <div>
             <ul>
                 <li><input class="" type="text"  name="name" placeholder="Nom"></li>
-                <li><input class="" type="text"  name="firstname" placeholder="Prénom"></li>
+                <li><input class="" type="text"  name="firstname" placeholder="Prénom"/></li>
             </ul>
         </div>    
         <div>    
@@ -52,16 +52,16 @@
                 <li><select  name="country" placeholder="Pays">
                     <Option>
                         <?php
+                        try {
                         $bdd = new PDO('mysql:host=localhost;dbname=cour','root','');        
-                        } catch (PDOException $e) {
+                        }catch (PDOException $e) {
                         echo 'Échec lors de la connexion : ' . $e->getMessage();
-                        
-                        $reponse = $bdd->query(/*[SELECT]*/);
+                        }
+                        $reponse = $bdd->query('SELECT * FROM Pays' );
                         while ($donnees = $reponse->fetch())
                         {
-                            echo '<option>' .$donnees[/* */] '</option>'
-                        }
-                        
+                            echo '<option>' .$donnees('nom'). '</option>';
+                         }
                         ?>
                     </option>
                 </select></li>
@@ -74,7 +74,7 @@
         </div>
         <div>
             <ul>
-                <li><input class="" type="text"  name="adresse1" placeholder="Adresse"></li>
+                <li><input class="" type="text"  name="adresse1" placeholder="Adresse"/></li>
             </ul>
         </div>
         <div>
@@ -85,8 +85,8 @@
         </div>
         <div>
             <ul>
-                <li><input class="" type="text"  name="adresse2" placeholder="Adresse"></li>
-                <li><input class="" type="number"  name="phone" placeholder="Téléphone"></li>
+                <li><input class="" type="text"  name="adresse2" placeholder="Adresse"/></li>
+                <li><input class="" type="number"  name="phone" placeholder="Téléphone"/></li>
             </ul>
         </div>
         <div>
