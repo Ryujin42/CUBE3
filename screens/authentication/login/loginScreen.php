@@ -1,5 +1,26 @@
 <?php
-$conn = new PDO("mysql:host=localhost;dbname=jarditou", "root", "");
+    $db = new PDO('mysql:host=localhost;dbname=cube3','root','');
+    session_start();
+
+    if(isset($_POST)  && !empty($_POST)){
+
+      $user = $_POST['username'];
+      $password = $_POST['password'];
+
+      $sql = "SELECT * FROM utilisateur WHERE pseudo = '$user' AND mdp = '$password'";
+
+      $query = $db->prepare($sql);
+
+      $query->execute();
+      $result=$query->fetch();
+      $count=$query->rowCount();
+      if($count == 1){
+        header('Location: ./loginScreen.php');
+      }
+      else {
+        echo 'identifiant ou mot de passe incorrect';
+      }
+    }
 ?>
 
 <!DOCTYPE html>

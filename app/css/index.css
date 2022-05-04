@@ -28,7 +28,8 @@ header {
     display: flex;
     align-items: center;
     flex-direction: column;
-    outline: solid 2px lightblue;
+    border-bottom: 1px solid var(--highlight);
+    margin-bottom: 5%;
 }
 
 
@@ -46,8 +47,8 @@ header nav div {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding-left: 10%;
-    padding-right: 10%;
+    padding-left: 5%;
+    padding-right: 5%;
 }
 
 header nav div div {
@@ -58,18 +59,4 @@ header nav div div {
 header nav div ul {
     display: flex;
     gap: 20px;
-}
-
-
-main section {
-    outline: solid 2px red;
-}
-
-
-main section article {
-    outline: solid 2px green;
-}
-
-footer {
-    outline: solid 2px pink;
 }

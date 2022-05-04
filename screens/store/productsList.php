@@ -25,9 +25,9 @@ $result = $request->fetchAll(PDO::FETCH_ASSOC);
         <nav>
             <div>
                 <ul>
-                    <li><a href="./actualityScreen.php">Actualités</a></li>
+                    <li><a href="./../actuality/actualityScreen.php">Actualités</a></li>
                     <li><a href="./../store/productsList.php">Boutique</a></li>
-                    <li><a href="./../screens/contact/contactScreen.php">Contact</a></li>
+                    <li><a href="./../admin/adminScreen.php">admin</a></li>
                 </ul>
                 <div class="auth-container">
                     <a href="./../authentication/login/loginScreen.php">Connexion</a>

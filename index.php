@@ -17,7 +17,7 @@
                 <ul>
                     <li><a href="./screens/actuality/actualityScreen.php">Actualités</a></li>
                     <li><a href="./screens/store/productsList.php">Boutique</a></li>
-                    <li><a href="./screens/contact/contactScreen.php">Contact</a></li>
+                    <li><a href="./screens/admin/adminScreen.php">Admin</a></li>
                 </ul>
                 <div class="auth-container">
                     <a href="./screens/authentication/login/loginScreen.php">Connexion</a>
@@ -33,7 +33,7 @@
                 <img src="./app/assets/imgs/actus/actu1.png" alt="actus 1" />
                 <div class="article__body">
                     <h3>Ajout d'armes blanches dans PaintWar</h3>
-                    <p><a href="./screens/actuality/actualityScreen.php"></a>En savoir plus</a></p>
+                    <p><a href="./screens/actuality/actualityScreen.php"></a></a></p>
                 </div>
             </article>
             <article>

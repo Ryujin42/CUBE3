@@ -17,7 +17,7 @@
                 <ul>
                     <li><a href="./actualityScreen.php">Actualités</a></li>
                     <li><a href="./../store/productsList.php">Boutique</a></li>
-                    <li><a href="./../screens/contact/contactScreen.php">Contact</a></li>
+                    <li><a href="./../admin/adminScreen.php">admin</a></li>
                 </ul>
                 <div class="auth-container">
                     <a href="./../authentication/login/loginScreen.php">Connexion</a>
@@ -36,8 +36,7 @@
         <h2>Paint War DEV LOG 2</h2>
         <h3>Ajout d'armes lourdes dans Paint War<h3>
         <p>
-        Ça y est ! la mise à jour la plus attendu de Paint War est enfin là ! Demandée par au moins 2 personnes, des armes à feu sont disponibles dans le shop. 
-        Évidemment, le game designer a équilibré ces dernières pour ne pas casser la méta du jeu, et a décidé que les projectiles seraient des balles de NERF.
+        BONK !
         </p>
         <h2>Paint War DEV LOG 1</h2>
         <h3>Ajout d'armes blanches dans Paint War<h3>
